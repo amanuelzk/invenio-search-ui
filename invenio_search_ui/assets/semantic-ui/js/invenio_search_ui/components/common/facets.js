@@ -1,18 +1,15 @@
 // This file is part of InvenioRDM
 // Copyright (C) 2022 CERN.
-//
 // Invenio Search Ui is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import { i18next } from "@translations/invenio_search_ui/i18next";
-import React, { useState } from "react";
+import React from "react";
 import {
-  Accordion,
   Button,
   Card,
-  Checkbox,
-  Label,
   List,
+  Dropdown
 } from "semantic-ui-react";
 import Overridable from "react-overridable";
 import PropTypes from "prop-types";
@@ -85,51 +82,19 @@ ContribSearchHelpLinks.defaultProps = {
 export const ContribParentFacetValue = ({
   bucket,
   keyField,
-  isSelected,
-  childAggCmps,
   onFilterClicked,
+  options,  
 }) => {
-  const [isActive, setIsActive] = useState(false);
-
   return (
-    <Accordion>
-      <Accordion.Title
-        onClick={() => { }}
-        key={`panel-${bucket.label}`}
-        active={isActive}
-        className="facet-wrapper parent"
-      >
-        <List.Content className="facet-wrapper">
-          <Button
-            icon="angle right"
-            className="transparent"
-            onClick={() => setIsActive(!isActive)}
-            aria-expanded={isActive}
-            aria-label={
-              i18next.t("Show all sub facets of ") + bucket.label || keyField
-            }
-          />
-          <Checkbox
-            label={<label aria-hidden="true">{bucket.label || keyField}</label>}
-            aria-label={bucket.label || keyField}
-            value={keyField}
-            checked={isSelected}
-            onClick={() => onFilterClicked(keyField)}
-          />
-          <Label
-            circular
-            role="note"
-            aria-label={`${bucket.doc_count} results for ${bucket.label || keyField}`}
-            className="facet-count"
-          >
-            <span aria-hidden="true">
-              {bucket.doc_count.toLocaleString("en-US")}
-            </span>
-          </Label>
-        </List.Content>
-      </Accordion.Title>
-      <Accordion.Content active={isActive}>{childAggCmps}</Accordion.Content>
-    </Accordion>
+    <>
+    <Dropdown
+      options={options}
+      aria-label={bucket.label || keyField}
+      value={keyField}
+      selection
+      onChange={(e, { value }) => onFilterClicked(value)}
+    />
+    </>
   );
 };
 
@@ -144,29 +109,19 @@ ContribParentFacetValue.propTypes = {
 export const ContribFacetValue = ({
   bucket,
   keyField,
-  isSelected,
   onFilterClicked,
+  options,  
 }) => {
   return (
-    <List.Content className="facet-wrapper">
-      <Checkbox
-        onClick={() => onFilterClicked(keyField)}
-        label={<label aria-hidden="true">{bucket.label || keyField}</label>}
-        aria-label={bucket.label || keyField}
-        value={keyField}
-        checked={isSelected}
-      />
-      <Label
-        circular
-        role="note"
-        aria-label={`${bucket.doc_count} results for ${bucket.label || keyField}`}
-        className="facet-count"
-      >
-        <span aria-hidden="true">
-          {bucket.doc_count.toLocaleString("en-US")}
-        </span>
-      </Label>
-    </List.Content>
+    <>
+      <Dropdown
+      options={options}
+      aria-label={bucket.label || keyField}
+      value={keyField}
+      selection
+      onChange={(e, { value }) => onFilterClicked(value)}
+    />
+    </>
   );
 };
 
@@ -182,11 +137,14 @@ export const ContribBucketAggregationValuesElement = ({
   isSelected,
   onFilterClicked,
   childAggCmps,
+  bucketLabels
 }) => {
   const hasChildren = childAggCmps && childAggCmps.props.buckets.length > 0;
   const keyField = bucket.key_as_string ? bucket.key_as_string : bucket.key;
+  const options=[{ key: keyField, value: keyField, text: bucket.label || keyField }];
+
   return (
-    <List.Item key={bucket.key}>
+    <>
       {hasChildren ? (
         <ContribParentFacetValue
           bucket={bucket}
@@ -194,6 +152,8 @@ export const ContribBucketAggregationValuesElement = ({
           isSelected={isSelected}
           childAggCmps={childAggCmps}
           onFilterClicked={onFilterClicked}
+          bucketLabels={bucketLabels}
+          options={options}
         />
       ) : (
         <ContribFacetValue
@@ -201,9 +161,11 @@ export const ContribBucketAggregationValuesElement = ({
           keyField={keyField}
           isSelected={isSelected}
           onFilterClicked={onFilterClicked}
+          bucketLabels={bucketLabels}
+          options={options}
         />
       )}
-    </List.Item>
+    </>
   );
 };
 
@@ -212,10 +174,12 @@ ContribBucketAggregationValuesElement.propTypes = {
   childAggCmps: PropTypes.node,
   isSelected: PropTypes.bool.isRequired,
   onFilterClicked: PropTypes.func.isRequired,
+  bucketLabels: PropTypes.array
 };
 
 ContribBucketAggregationValuesElement.defaultProps = {
-  childAggCmps: null,
+  bucketLabels: null,
+  containerCmp: null
 };
 
 export const ContribBucketAggregationElement = ({
@@ -233,6 +197,12 @@ export const ContribBucketAggregationElement = ({
   const hasSelections = () => {
     return !!containerCmp.props.selectedFilters.length;
   };
+
+  const options = containerCmp.props.buckets.map(bucket => ({
+    key: bucket.key,
+    value: bucket.key, 
+    text: bucket.label,
+  }));
 
   return (
     <Card className="borderless facet">
@@ -254,7 +224,12 @@ export const ContribBucketAggregationElement = ({
             </Button>
           )}
         </Card.Header>
-        {containerCmp}
+        <Dropdown
+          options={options}
+          value={containerCmp.props.selectedFilters.map(filter => filter.value)}
+          selection
+          onChange={(e, { value }) => updateQueryFilters([agg.aggName, value], containerCmp.props.selectedFilters)}
+        />
       </Card.Content>
     </Card>
   );
@@ -265,8 +240,10 @@ ContribBucketAggregationElement.propTypes = {
   title: PropTypes.string.isRequired,
   containerCmp: PropTypes.node,
   updateQueryFilters: PropTypes.func.isRequired,
+  options: PropTypes.array
 };
 
 ContribBucketAggregationElement.defaultProps = {
-  containerCmp: null,
+  options: null,
+  containerCmp: null
 };
