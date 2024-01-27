@@ -1,14 +1,87 @@
 import { i18next } from "@translations/invenio_search_ui/i18next";
-import React from "react";
+import React, { useState } from "react";
 import {
-  Button,
   Card,
   List,
-  Dropdown
+  Button,
+  Search,
 } from "semantic-ui-react";
-import Overridable from "react-overridable";
 import PropTypes from "prop-types";
 import { BucketAggregation, Toggle, buildUID } from "react-searchkit";
+import Overridable from "react-overridable";
+import _ from "lodash";
+
+const initialState = {
+  loading: false,
+  source: [],
+  value: "",
+};
+
+function exampleReducer(state, action) {
+  switch (action.type) {
+    case "CLEAN_QUERY":
+      return initialState;
+    case "START_SEARCH":
+      return { ...state, loading: true, value: action.query };
+    case "FINISH_SEARCH":
+      return { ...state, loading: false, source: action.source };
+    case "UPDATE_SELECTION":
+      return { ...state, value: action.selection };
+
+    default:
+      throw new Error();
+  }
+}
+
+function SearchDropdown({ result, onResultSelect }) {
+  const [state, dispatch] = React.useReducer(exampleReducer, initialState);
+  const { loading, source, value } = state;
+
+  const timeoutRef = React.useRef();
+
+  const handleSearchChange = React.useCallback(
+    (e, data) => {
+      clearTimeout(timeoutRef.current);
+      dispatch({ type: "START_SEARCH", query: data.value });
+  
+      timeoutRef.current = setTimeout(() => {
+  
+        const re = new RegExp(_.escapeRegExp(data.value), "i");
+        const isMatch = (result) => re.test(result.text);
+  
+        console.log("Filtered Data:", _.filter(result, isMatch));
+        console.log("source:", _.filter(result, isMatch));
+        const filteredResults = _.filter(result, isMatch);
+  
+        dispatch({
+          type: "FINISH_SEARCH",
+          source: filteredResults,
+        });
+      }, 300);
+    },
+    [result]
+  );
+  React.useEffect(() => {
+    return () => {
+      clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const formattedResults = source.map((item) => ({
+    title: item.text,
+  }));
+
+  return ( 
+    <Search
+      loading={loading}
+      placeholder="Search..."
+      onResultSelect={onResultSelect}
+      onSearchChange={handleSearchChange}
+      results={formattedResults}
+      value={value}
+    />
+  );
+}
 
 export const ContribSearchAppFacets = ({ aggs, toggle, help, appName }) => {
   return (
@@ -20,19 +93,17 @@ export const ContribSearchAppFacets = ({ aggs, toggle, help, appName }) => {
           filterValue={["allversions", "true"]}
         />
       )}
+      {aggs.map((agg) => (
+        <div className="facet-container" key={agg.title}>
+          <BucketAggregation title={agg.title} agg={agg} />
+        </div>
+      ))}
 
-      {aggs.map((agg) => {
-        return (
-          <div className="facet-container" key={agg.title}>
-            <BucketAggregation title={agg.title} agg={agg} />
-          </div>
-        );
-      })}
       {help && (
         <Card className="borderless facet mt-0">
           <Card.Content>
             <Card.Header as="h2">{i18next.t("Help")}</Card.Header>
-            <ContribSearchHelpLinks appName={appName}/>
+            <ContribSearchHelpLinks appName={appName} />
           </Card.Content>
         </Card>
       )}
@@ -77,19 +148,16 @@ ContribSearchHelpLinks.defaultProps = {
 export const ContribParentFacetValue = ({
   bucket,
   keyField,
+  childAggCmps,
   onFilterClicked,
-  options,  
+  source,
 }) => {
+  const [isActive, setIsActive] = useState(false);
   return (
-    <>
-    <Dropdown
-      options={options}
-      aria-label={bucket.label || keyField}
-      value={keyField}
-      selection
-      onChange={(e, { value }) => onFilterClicked(value)}
+    <SearchDropdown 
+      result={source}
+      onResultSelect={(e, { result }) => onFilterClicked(result.keyField)}
     />
-    </>
   );
 };
 
@@ -104,19 +172,14 @@ ContribParentFacetValue.propTypes = {
 export const ContribFacetValue = ({
   bucket,
   keyField,
+  source,
   onFilterClicked,
-  options,  
 }) => {
   return (
-    <>
-      <Dropdown
-      options={options}
-      aria-label={bucket.label || keyField}
-      value={keyField}
-      selection
-      onChange={(e, { value }) => onFilterClicked(value)}
+    <SearchDropdown 
+      result={source}
+      onResultSelect={(e, { result }) => onFilterClicked(result.keyField)}
     />
-    </>
   );
 };
 
@@ -132,14 +195,11 @@ export const ContribBucketAggregationValuesElement = ({
   isSelected,
   onFilterClicked,
   childAggCmps,
-  bucketLabels
 }) => {
   const hasChildren = childAggCmps && childAggCmps.props.buckets.length > 0;
   const keyField = bucket.key_as_string ? bucket.key_as_string : bucket.key;
-  const options=[{ key: keyField, value: keyField, text: bucket.label || keyField }];
-
   return (
-    <>
+    <List.Item key={bucket.key}>
       {hasChildren ? (
         <ContribParentFacetValue
           bucket={bucket}
@@ -147,8 +207,6 @@ export const ContribBucketAggregationValuesElement = ({
           isSelected={isSelected}
           childAggCmps={childAggCmps}
           onFilterClicked={onFilterClicked}
-          bucketLabels={bucketLabels}
-          options={options}
         />
       ) : (
         <ContribFacetValue
@@ -156,11 +214,9 @@ export const ContribBucketAggregationValuesElement = ({
           keyField={keyField}
           isSelected={isSelected}
           onFilterClicked={onFilterClicked}
-          bucketLabels={bucketLabels}
-          options={options}
         />
       )}
-    </>
+    </List.Item>
   );
 };
 
@@ -169,12 +225,10 @@ ContribBucketAggregationValuesElement.propTypes = {
   childAggCmps: PropTypes.node,
   isSelected: PropTypes.bool.isRequired,
   onFilterClicked: PropTypes.func.isRequired,
-  bucketLabels: PropTypes.array
 };
 
 ContribBucketAggregationValuesElement.defaultProps = {
-  bucketLabels: null,
-  containerCmp: null
+  childAggCmps: null,
 };
 
 export const ContribBucketAggregationElement = ({
@@ -183,9 +237,12 @@ export const ContribBucketAggregationElement = ({
   containerCmp,
   updateQueryFilters,
 }) => {
+  const [dispatch] = React.useReducer(exampleReducer, initialState);
   const clearFacets = () => {
     if (containerCmp.props.selectedFilters.length) {
       updateQueryFilters([agg.aggName, ""], containerCmp.props.selectedFilters);
+      dispatch({ type: "CLEAN_QUERY" });
+      return;
     }
   };
 
@@ -193,11 +250,12 @@ export const ContribBucketAggregationElement = ({
     return !!containerCmp.props.selectedFilters.length;
   };
 
-  const options = containerCmp.props.buckets.map(bucket => ({
-    key: bucket.key,
-    value: bucket.key, 
-    text: bucket.label,
-  }));
+  const source = containerCmp.props.buckets.map((filter) => ({
+  key: filter.key,
+  text: filter.label,
+  value: filter.key,
+}));
+
 
   return (
     <Card className="borderless facet">
@@ -212,18 +270,16 @@ export const ContribBucketAggregationElement = ({
               size="mini"
               floated="right"
               onClick={clearFacets}
-              aria-label={i18next.t("Clear selection")}
-              title={i18next.t("Clear selection")}
+              aria-label="Clear selection"
+              title="Clear selection"
             >
-              {i18next.t("Clear")}
+              Clear
             </Button>
           )}
         </Card.Header>
-        <Dropdown
-          options={options}
-          value={containerCmp.props.selectedFilters.map(filter => filter.value)}
-          selection
-          onChange={(e, { value }) => updateQueryFilters([agg.aggName, value], containerCmp.props.selectedFilters)}
+        <SearchDropdown
+          result={source}
+          onResultSelect={(e, { value }) => updateQueryFilters([agg.aggName, value], containerCmp.props.selectedFilters)}
         />
       </Card.Content>
     </Card>
@@ -235,10 +291,10 @@ ContribBucketAggregationElement.propTypes = {
   title: PropTypes.string.isRequired,
   containerCmp: PropTypes.node,
   updateQueryFilters: PropTypes.func.isRequired,
-  options: PropTypes.array
+  source: PropTypes.array,
 };
 
 ContribBucketAggregationElement.defaultProps = {
-  options: null,
-  containerCmp: null
+  containerCmp: null,
+  source: null,
 };
