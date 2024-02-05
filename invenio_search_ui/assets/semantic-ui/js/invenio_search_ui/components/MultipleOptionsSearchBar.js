@@ -6,16 +6,17 @@
  * under the terms of the MIT License; see LICENSE file for more details.
  */
 
-import React, { Component } from "react";
+import React, {useEffect, Component } from "react";
 import { withState } from "react-searchkit";
 import { Search, Label, Button, Icon } from "semantic-ui-react";
 import { i18next } from "@translations/invenio_search_ui/i18next";
 import _isEmpty from "lodash/isEmpty";
 import PropTypes from "prop-types";
-
+import {http,withCancel} from "react-invenio-forms"
+import _ from 'lodash'
+import { Stumble } from "./stumble";
 const resultRenderer = ({ text }, queryString) => {
-  let searchOption = "...";
-
+let searchOption = "..."
   if (!_isEmpty(queryString)) {
     searchOption = queryString;
   }
@@ -30,12 +31,19 @@ const resultRenderer = ({ text }, queryString) => {
 export class MultipleOptionsSearchBar extends Component {
   /** Multiple options searchbar to be used as a standalone component
    */
+
   constructor(props) {
     super(props);
     this.state = {
       queryString: "",
+        isLoading: false,
+        selectedValue :'',
+        selectedOption: '',
+        error: null,
+  
     };
   }
+
 
   handleOnSearchClick = () => {
     const { options, defaultOption } = this.props;
@@ -61,8 +69,15 @@ export class MultipleOptionsSearchBar extends Component {
   }
 
   render() {
+    window.sendToReactComponent = (selectedValue) => {
+      this.setState(selectedValue)
+      console.log('Selected sss in React:', selectedValue);
+    };
+  
+    
     const { placeholder, options } = this.props;
-    const { queryString } = this.state;
+    const { queryString,selectedValue } = this.state;
+   
     const button = (
       <Button
         icon
@@ -74,6 +89,8 @@ export class MultipleOptionsSearchBar extends Component {
       </Button>
     );
     return (
+      <>
+      <Stumble selectedValue={selectedValue}/>
       <Search
         fluid
         aria-label={placeholder}
@@ -89,6 +106,7 @@ export class MultipleOptionsSearchBar extends Component {
         className="right-angle-search-content"
         selectFirstResult
       />
+      </>
     );
   }
 }

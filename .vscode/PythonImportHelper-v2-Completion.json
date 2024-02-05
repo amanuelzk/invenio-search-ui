@@ -1,0 +1,791 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "__version__",
+        "importPath": "invenio_search_ui",
+        "description": "invenio_search_ui",
+        "isExtraImport": true,
+        "detail": "invenio_search_ui",
+        "documentation": {}
+    },
+    {
+        "label": "InvenioSearchUI",
+        "importPath": "invenio_search_ui",
+        "description": "invenio_search_ui",
+        "isExtraImport": true,
+        "detail": "invenio_search_ui",
+        "documentation": {}
+    },
+    {
+        "label": "InvenioSearchUI",
+        "importPath": "invenio_search_ui",
+        "description": "invenio_search_ui",
+        "isExtraImport": true,
+        "detail": "invenio_search_ui",
+        "documentation": {}
+    },
+    {
+        "label": "deepcopy",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "deepcopy",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "current_app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "current_app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template_string",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template_string",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "WebpackThemeBundle",
+        "importPath": "invenio_assets.webpack",
+        "description": "invenio_assets.webpack",
+        "isExtraImport": true,
+        "detail": "invenio_assets.webpack",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "jinja2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "InvenioAssets",
+        "importPath": "invenio_assets",
+        "description": "invenio_assets",
+        "isExtraImport": true,
+        "detail": "invenio_assets",
+        "documentation": {}
+    },
+    {
+        "label": "Babel",
+        "importPath": "invenio_i18n",
+        "description": "invenio_i18n",
+        "isExtraImport": true,
+        "detail": "invenio_i18n",
+        "documentation": {}
+    },
+    {
+        "label": "blueprint",
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "isExtraImport": true,
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "format_sortoptions",
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "isExtraImport": true,
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "SearchAppInvenioRestConfigHelper",
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "isExtraImport": true,
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "suppress_warnings",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "suppress_warnings = [\"image.nonlocal_uri\"]\n# Add any Sphinx extension module names here, as strings. They can be\n# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom\n# ones.\nextensions = [\n    \"sphinx.ext.autodoc\",\n    \"sphinx.ext.coverage\",\n    \"sphinx.ext.doctest\",\n    \"sphinx.ext.extlinks\",\n    \"sphinx.ext.intersphinx\",",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "extensions",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "extensions = [\n    \"sphinx.ext.autodoc\",\n    \"sphinx.ext.coverage\",\n    \"sphinx.ext.doctest\",\n    \"sphinx.ext.extlinks\",\n    \"sphinx.ext.intersphinx\",\n    \"sphinx.ext.viewcode\",\n]\nextlinks = {\n    \"source\": (",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "extlinks",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "extlinks = {\n    \"source\": (\n        \"https://github.com/inveniosoftware/invenio-search-ui/tree/master/%s\",\n        \"source %s\",\n    )\n}\n# Add any paths that contain templates here, relative to this directory.\ntemplates_path = [\"_templates\"]\n# The suffix(es) of source filenames.\n# You can specify multiple suffix as a list of string:",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "templates_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "templates_path = [\"_templates\"]\n# The suffix(es) of source filenames.\n# You can specify multiple suffix as a list of string:\n# source_suffix = ['.rst', '.md']\nsource_suffix = \".rst\"\n# The encoding of source files.\n# source_encoding = 'utf-8-sig'\n# The master toctree document.\nmaster_doc = \"index\"\n# General information about the project.",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "source_suffix",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "source_suffix = \".rst\"\n# The encoding of source files.\n# source_encoding = 'utf-8-sig'\n# The master toctree document.\nmaster_doc = \"index\"\n# General information about the project.\nproject = \"Invenio-Search-UI\"\ncopyright = \"2015, CERN\"\nauthor = \"CERN\"\n# The version info for the project you're documenting, acts as replacement for",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "master_doc",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "master_doc = \"index\"\n# General information about the project.\nproject = \"Invenio-Search-UI\"\ncopyright = \"2015, CERN\"\nauthor = \"CERN\"\n# The version info for the project you're documenting, acts as replacement for\n# |version| and |release|, also used in various other places throughout the\n# built documents.\n#\n# The short X.Y version.",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "project",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "project = \"Invenio-Search-UI\"\ncopyright = \"2015, CERN\"\nauthor = \"CERN\"\n# The version info for the project you're documenting, acts as replacement for\n# |version| and |release|, also used in various other places throughout the\n# built documents.\n#\n# The short X.Y version.\n# The full version, including alpha/beta/rc tags.\nrelease = __version__",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "copyright",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "copyright = \"2015, CERN\"\nauthor = \"CERN\"\n# The version info for the project you're documenting, acts as replacement for\n# |version| and |release|, also used in various other places throughout the\n# built documents.\n#\n# The short X.Y version.\n# The full version, including alpha/beta/rc tags.\nrelease = __version__\n# The language for content autogenerated by Sphinx. Refer to documentation",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "author",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "author = \"CERN\"\n# The version info for the project you're documenting, acts as replacement for\n# |version| and |release|, also used in various other places throughout the\n# built documents.\n#\n# The short X.Y version.\n# The full version, including alpha/beta/rc tags.\nrelease = __version__\n# The language for content autogenerated by Sphinx. Refer to documentation\n# for a list of supported languages.",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "release",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "release = __version__\n# The language for content autogenerated by Sphinx. Refer to documentation\n# for a list of supported languages.\n#\n# This is also used if you do content translation via gettext catalogs.\n# Usually you set \"language\" from the command line for these cases.\nlanguage = \"en\"\n# There are two options for replacing |today|: either, you set today to some\n# non-false value, then it is used:\n# today = ''",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "language",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "language = \"en\"\n# There are two options for replacing |today|: either, you set today to some\n# non-false value, then it is used:\n# today = ''\n# Else, today_fmt is used as the format for a strftime call.\n# today_fmt = '%B %d, %Y'\n# List of patterns, relative to source directory, that match files and\n# directories to ignore when looking for source files.\nexclude_patterns = []\n# The reST default role (used for this markup: `text`) to use for all",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "exclude_patterns",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "exclude_patterns = []\n# The reST default role (used for this markup: `text`) to use for all\n# documents.\n# default_role = None\n# If true, '()' will be appended to :func: etc. cross-reference text.\n# add_function_parentheses = True\n# If true, the current module name will be prepended to all description\n# unit titles (such as .. function::).\n# add_module_names = True\n# If true, sectionauthor and moduleauthor directives will be shown in the",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "pygments_style",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "pygments_style = \"sphinx\"\n# A list of ignored prefixes for module index sorting.\n# modindex_common_prefix = []\n# If true, keep warnings as \"system message\" paragraphs in the built documents.\n# keep_warnings = False\n# If true, `todo` and `todoList` produce output, else they produce nothing.\ntodo_include_todos = False\n# -- Options for HTML output ----------------------------------------------\nhtml_theme = \"alabaster\"\nhtml_theme_options = {",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "todo_include_todos",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "todo_include_todos = False\n# -- Options for HTML output ----------------------------------------------\nhtml_theme = \"alabaster\"\nhtml_theme_options = {\n    \"description\": \"UI for Invenio-Search.\",\n    \"github_user\": \"inveniosoftware\",\n    \"github_repo\": \"invenio-search-ui\",\n    \"github_button\": False,\n    \"github_banner\": True,\n    \"show_powered_by\": False,",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_theme = \"alabaster\"\nhtml_theme_options = {\n    \"description\": \"UI for Invenio-Search.\",\n    \"github_user\": \"inveniosoftware\",\n    \"github_repo\": \"invenio-search-ui\",\n    \"github_button\": False,\n    \"github_banner\": True,\n    \"show_powered_by\": False,\n    \"extra_nav_links\": {\n        \"invenio-search-ui@GitHub\": \"https://github.com/inveniosoftware/invenio-search-ui\",",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme_options",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_theme_options = {\n    \"description\": \"UI for Invenio-Search.\",\n    \"github_user\": \"inveniosoftware\",\n    \"github_repo\": \"invenio-search-ui\",\n    \"github_button\": False,\n    \"github_banner\": True,\n    \"show_powered_by\": False,\n    \"extra_nav_links\": {\n        \"invenio-search-ui@GitHub\": \"https://github.com/inveniosoftware/invenio-search-ui\",\n        \"invenio-search-ui@PyPI\": \"https://pypi.python.org/pypi/invenio-search-ui/\",",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_sidebars",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_sidebars = {\n    \"**\": [\n        \"about.html\",\n        \"navigation.html\",\n        \"relations.html\",\n        \"searchbox.html\",\n        \"donate.html\",\n    ]\n}\n# Additional templates that should be rendered to pages, maps page names to",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "htmlhelp_basename",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "htmlhelp_basename = \"invenio-search-ui_namedoc\"\n# -- Options for LaTeX output ---------------------------------------------\nlatex_elements = {\n    # The paper size ('letterpaper' or 'a4paper').\n    #'papersize': 'letterpaper',\n    # The font size ('10pt', '11pt' or '12pt').\n    #'pointsize': '10pt',\n    # Additional stuff for the LaTeX preamble.\n    #'preamble': '',\n    # Latex figure (float) alignment",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "latex_elements",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "latex_elements = {\n    # The paper size ('letterpaper' or 'a4paper').\n    #'papersize': 'letterpaper',\n    # The font size ('10pt', '11pt' or '12pt').\n    #'pointsize': '10pt',\n    # Additional stuff for the LaTeX preamble.\n    #'preamble': '',\n    # Latex figure (float) alignment\n    #'figure_align': 'htbp',\n}",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "latex_documents",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "latex_documents = [\n    (\n        master_doc,\n        \"invenio-search-ui.tex\",\n        \"invenio-search-ui Documentation\",\n        \"CERN\",\n        \"manual\",\n    ),\n]\n# The name of an image file (relative to this directory) to place at the top of",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "man_pages",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "man_pages = [\n    (master_doc, \"invenio-search-ui\", \"invenio-search-ui Documentation\", [author], 1)\n]\n# If true, show URL addresses after external links.\n# man_show_urls = False\n# -- Options for Texinfo output -------------------------------------------\n# Grouping the document tree into Texinfo files. List of tuples\n# (source start file, target name, title, author,\n#  dir menu entry, description, category)\ntexinfo_documents = [",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "texinfo_documents",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "texinfo_documents = [\n    (\n        master_doc,\n        \"invenio-search-ui\",\n        \"Invenio-Search-UI Documentation\",\n        author,\n        \"invenio-search-ui\",\n        \"UI for Invenio-Search.\",\n        \"Miscellaneous\",\n    ),",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "intersphinx_mapping",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "intersphinx_mapping = {\n    \"python\": (\"https://docs.python.org/\", None),\n}\n# Autodoc configuraton.\nautoclass_content = \"both\"",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "autoclass_content",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "autoclass_content = \"both\"",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_SEARCH_TEMPLATE",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_SEARCH_TEMPLATE = \"invenio_search_ui/search.html\"\n\"\"\"Configure the search page template.\"\"\"\n# The configuration below is for the AngularJS search app configuration\nSEARCH_UI_SEARCH_API = \"/api/records/\"\n\"\"\"Configure the search engine endpoint.\"\"\"\nSEARCH_UI_SEARCH_INDEX = \"records\"\n\"\"\"Name of the search index used.\"\"\"\n# The configuration below is for the AngularJS search app templates\nSEARCH_UI_JSTEMPLATE_COUNT = \"templates/invenio_search_ui/count.html\"\n\"\"\"Configure the count template.\"\"\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_SEARCH_API",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_SEARCH_API = \"/api/records/\"\n\"\"\"Configure the search engine endpoint.\"\"\"\nSEARCH_UI_SEARCH_INDEX = \"records\"\n\"\"\"Name of the search index used.\"\"\"\n# The configuration below is for the AngularJS search app templates\nSEARCH_UI_JSTEMPLATE_COUNT = \"templates/invenio_search_ui/count.html\"\n\"\"\"Configure the count template.\"\"\"\nSEARCH_UI_JSTEMPLATE_ERROR = \"templates/invenio_search_ui/error.html\"\n\"\"\"Configure the error page template.\"\"\"\nSEARCH_UI_JSTEMPLATE_FACETS = \"templates/invenio_search_ui/facets.html\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_SEARCH_INDEX",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_SEARCH_INDEX = \"records\"\n\"\"\"Name of the search index used.\"\"\"\n# The configuration below is for the AngularJS search app templates\nSEARCH_UI_JSTEMPLATE_COUNT = \"templates/invenio_search_ui/count.html\"\n\"\"\"Configure the count template.\"\"\"\nSEARCH_UI_JSTEMPLATE_ERROR = \"templates/invenio_search_ui/error.html\"\n\"\"\"Configure the error page template.\"\"\"\nSEARCH_UI_JSTEMPLATE_FACETS = \"templates/invenio_search_ui/facets.html\"\n\"\"\"Configure the facets template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE = \"templates/invenio_search_ui/range.html\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_COUNT",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_COUNT = \"templates/invenio_search_ui/count.html\"\n\"\"\"Configure the count template.\"\"\"\nSEARCH_UI_JSTEMPLATE_ERROR = \"templates/invenio_search_ui/error.html\"\n\"\"\"Configure the error page template.\"\"\"\nSEARCH_UI_JSTEMPLATE_FACETS = \"templates/invenio_search_ui/facets.html\"\n\"\"\"Configure the facets template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE = \"templates/invenio_search_ui/range.html\"\n\"\"\"Configure the range template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE_OPTIONS = {\n    \"histogramId\": \"#year_hist\",",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_ERROR",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_ERROR = \"templates/invenio_search_ui/error.html\"\n\"\"\"Configure the error page template.\"\"\"\nSEARCH_UI_JSTEMPLATE_FACETS = \"templates/invenio_search_ui/facets.html\"\n\"\"\"Configure the facets template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE = \"templates/invenio_search_ui/range.html\"\n\"\"\"Configure the range template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE_OPTIONS = {\n    \"histogramId\": \"#year_hist\",\n    \"selectionId\": \"#year_select\",\n    \"name\": \"years\",",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_FACETS",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_FACETS = \"templates/invenio_search_ui/facets.html\"\n\"\"\"Configure the facets template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE = \"templates/invenio_search_ui/range.html\"\n\"\"\"Configure the range template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE_OPTIONS = {\n    \"histogramId\": \"#year_hist\",\n    \"selectionId\": \"#year_select\",\n    \"name\": \"years\",\n    \"width\": 180,\n}",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_RANGE",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_RANGE = \"templates/invenio_search_ui/range.html\"\n\"\"\"Configure the range template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RANGE_OPTIONS = {\n    \"histogramId\": \"#year_hist\",\n    \"selectionId\": \"#year_select\",\n    \"name\": \"years\",\n    \"width\": 180,\n}\n\"\"\"Configure the range template options.\"\"\"\nSEARCH_UI_JSTEMPLATE_LOADING = \"templates/invenio_search_ui/loading.html\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_RANGE_OPTIONS",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_RANGE_OPTIONS = {\n    \"histogramId\": \"#year_hist\",\n    \"selectionId\": \"#year_select\",\n    \"name\": \"years\",\n    \"width\": 180,\n}\n\"\"\"Configure the range template options.\"\"\"\nSEARCH_UI_JSTEMPLATE_LOADING = \"templates/invenio_search_ui/loading.html\"\n\"\"\"Configure the loading template.\"\"\"\nSEARCH_UI_JSTEMPLATE_PAGINATION = \"templates/invenio_search_ui/pagination.html\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_LOADING",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_LOADING = \"templates/invenio_search_ui/loading.html\"\n\"\"\"Configure the loading template.\"\"\"\nSEARCH_UI_JSTEMPLATE_PAGINATION = \"templates/invenio_search_ui/pagination.html\"\n\"\"\"Configure the pagination template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RESULTS = \"templates/invenio_search_ui/results.html\"\n\"\"\"Configure the results template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SELECT_BOX = \"templates/invenio_search_ui/selectbox.html\"\n\"\"\"Configure the select box template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SORT_ORDER = \"templates/invenio_search_ui/togglebutton.html\"\n\"\"\"Configure the toggle button template.\"\"\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_PAGINATION",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_PAGINATION = \"templates/invenio_search_ui/pagination.html\"\n\"\"\"Configure the pagination template.\"\"\"\nSEARCH_UI_JSTEMPLATE_RESULTS = \"templates/invenio_search_ui/results.html\"\n\"\"\"Configure the results template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SELECT_BOX = \"templates/invenio_search_ui/selectbox.html\"\n\"\"\"Configure the select box template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SORT_ORDER = \"templates/invenio_search_ui/togglebutton.html\"\n\"\"\"Configure the toggle button template.\"\"\"\nSEARCH_UI_SEARCH_CONFIG_GEN = {\n    \"invenio_records_rest\": SearchAppInvenioRestConfigHelper,",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_RESULTS",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_RESULTS = \"templates/invenio_search_ui/results.html\"\n\"\"\"Configure the results template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SELECT_BOX = \"templates/invenio_search_ui/selectbox.html\"\n\"\"\"Configure the select box template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SORT_ORDER = \"templates/invenio_search_ui/togglebutton.html\"\n\"\"\"Configure the toggle button template.\"\"\"\nSEARCH_UI_SEARCH_CONFIG_GEN = {\n    \"invenio_records_rest\": SearchAppInvenioRestConfigHelper,\n}\n\"\"\"Override the Invenio-Search-JS config generator.\"\"\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_SELECT_BOX",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_SELECT_BOX = \"templates/invenio_search_ui/selectbox.html\"\n\"\"\"Configure the select box template.\"\"\"\nSEARCH_UI_JSTEMPLATE_SORT_ORDER = \"templates/invenio_search_ui/togglebutton.html\"\n\"\"\"Configure the toggle button template.\"\"\"\nSEARCH_UI_SEARCH_CONFIG_GEN = {\n    \"invenio_records_rest\": SearchAppInvenioRestConfigHelper,\n}\n\"\"\"Override the Invenio-Search-JS config generator.\"\"\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_JSTEMPLATE_SORT_ORDER",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_JSTEMPLATE_SORT_ORDER = \"templates/invenio_search_ui/togglebutton.html\"\n\"\"\"Configure the toggle button template.\"\"\"\nSEARCH_UI_SEARCH_CONFIG_GEN = {\n    \"invenio_records_rest\": SearchAppInvenioRestConfigHelper,\n}\n\"\"\"Override the Invenio-Search-JS config generator.\"\"\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_UI_SEARCH_CONFIG_GEN",
+        "kind": 5,
+        "importPath": "invenio_search_ui.config",
+        "description": "invenio_search_ui.config",
+        "peekOfCode": "SEARCH_UI_SEARCH_CONFIG_GEN = {\n    \"invenio_records_rest\": SearchAppInvenioRestConfigHelper,\n}\n\"\"\"Override the Invenio-Search-JS config generator.\"\"\"",
+        "detail": "invenio_search_ui.config",
+        "documentation": {}
+    },
+    {
+        "label": "InvenioSearchUI",
+        "kind": 6,
+        "importPath": "invenio_search_ui.ext",
+        "description": "invenio_search_ui.ext",
+        "peekOfCode": "class InvenioSearchUI(object):\n    \"\"\"Invenio-Search-UI extension.\"\"\"\n    def __init__(self, app=None):\n        \"\"\"Extension initialization.\n        :param app: The Flask application.\n        \"\"\"\n        if app:\n            self.init_app(app)\n    def init_app(self, app):\n        \"\"\"Flask application initialization.",
+        "detail": "invenio_search_ui.ext",
+        "documentation": {}
+    },
+    {
+        "label": "SearchOptionsSelector",
+        "kind": 6,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "class SearchOptionsSelector:\n    \"\"\"Generic helper to select and validate facet/sort options.\"\"\"\n    def __init__(self, available_options, selected_options):\n        \"\"\"Initialize selector.\"\"\"\n        self.available_options = available_options\n        self.selected_options = selected_options\n    def __iter__(self):\n        \"\"\"Iterate over options to produce RSK options.\"\"\"\n        for o in self.selected_options:\n            yield self.map_option(o, self.available_options[o])",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "SortConfig",
+        "kind": 6,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "class SortConfig(SearchOptionsSelector):\n    \"\"\"Sort options for the search configuration.\"\"\"\n    def __init__(\n        self, available_options, selected_options, default=None, default_no_query=None\n    ):\n        \"\"\"Initialize sort options.\"\"\"\n        super().__init__(available_options, selected_options)\n        self.default = selected_options[0] if default is None else default\n        self.default_no_query = (\n            selected_options[1] if default_no_query is None else default_no_query",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "FacetsConfig",
+        "kind": 6,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "class FacetsConfig(SearchOptionsSelector):\n    \"\"\"Facets options for the search configuration.\"\"\"\n    def map_option(self, key, option):\n        \"\"\"Generate an RSK aggregation option.\"\"\"\n        title = option.get(\"title\", option[\"facet\"]._label)\n        ui = deepcopy(option[\"ui\"])\n        ui.update(\n            {\n                \"aggName\": key,\n                \"title\": title,",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "SearchAppConfig",
+        "kind": 6,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "class SearchAppConfig:\n    \"\"\"Configuration generator for React-SearchKit.\"\"\"\n    default_options = dict(\n        endpoint=None,\n        hidden_params=None,\n        app_id=\"search\",\n        headers=None,\n        list_view=True,\n        grid_view=False,\n        pagination_options=(10, 20, 50),",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "sort_config",
+        "kind": 2,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "def sort_config(config_name, sort_options):\n    \"\"\"Sort configuration.\"\"\"\n    return SortConfig(\n        sort_options,\n        current_app.config[config_name].get(\"sort\", []),\n        current_app.config[config_name].get(\"sort_default\", None),\n        current_app.config[config_name].get(\"sort_default_no_query\"),\n    )\ndef facets_config(config_name, available_facets):\n    \"\"\"Facets configuration.\"\"\"",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "facets_config",
+        "kind": 2,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "def facets_config(config_name, available_facets):\n    \"\"\"Facets configuration.\"\"\"\n    return FacetsConfig(\n        available_facets, current_app.config[config_name].get(\"facets\", [])\n    )\ndef search_app_config(\n    config_name,\n    available_facets,\n    sort_options,\n    endpoint,",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "search_app_config",
+        "kind": 2,
+        "importPath": "invenio_search_ui.searchconfig",
+        "description": "invenio_search_ui.searchconfig",
+        "peekOfCode": "def search_app_config(\n    config_name,\n    available_facets,\n    sort_options,\n    endpoint,\n    headers,\n    overrides=None,\n    **kwargs\n):\n    \"\"\"Search app config.",
+        "detail": "invenio_search_ui.searchconfig",
+        "documentation": {}
+    },
+    {
+        "label": "SearchAppInvenioRestConfigHelper",
+        "kind": 6,
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "peekOfCode": "class SearchAppInvenioRestConfigHelper(object):\n    \"\"\"Configuration generator for Invenio-Search-JS.\n    Using the existing configuration from Invenio-Records-REST we can\n       prefill most of the needed information required for the initialisation\n       of SearchApp.\n    \"\"\"\n    default_options = dict(\n        endpoint_id=None,\n        hidden_params=None,\n        app_id=\"search\",",
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "kind": 2,
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "peekOfCode": "def search():\n    \"\"\"Search page ui.\"\"\"\n    return render_template(current_app.config[\"SEARCH_UI_SEARCH_TEMPLATE\"])\ndef sorted_options(sort_options):\n    \"\"\"Sort sort options for display.\n    :param sort_options: A dictionary containing the field name as key and\n        asc/desc as value.\n    :returns: A dictionary with sorting options for Invenio-Search-JS.\n    \"\"\"\n    return [",
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "sorted_options",
+        "kind": 2,
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "peekOfCode": "def sorted_options(sort_options):\n    \"\"\"Sort sort options for display.\n    :param sort_options: A dictionary containing the field name as key and\n        asc/desc as value.\n    :returns: A dictionary with sorting options for Invenio-Search-JS.\n    \"\"\"\n    return [\n        {\n            \"title\": v[\"title\"],\n            \"value\": (",
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "format_sortoptions",
+        "kind": 2,
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "peekOfCode": "def format_sortoptions(sort_options):\n    \"\"\"Create sort options JSON dump for Invenio-Search-JS.\"\"\"\n    return json.dumps({\"options\": sorted_options(sort_options)})\nclass SearchAppInvenioRestConfigHelper(object):\n    \"\"\"Configuration generator for Invenio-Search-JS.\n    Using the existing configuration from Invenio-Records-REST we can\n       prefill most of the needed information required for the initialisation\n       of SearchApp.\n    \"\"\"\n    default_options = dict(",
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "search_app_helpers",
+        "kind": 2,
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "peekOfCode": "def search_app_helpers():\n    \"\"\"Makes Invenio-Search-JS config generation available for Jinja.\"\"\"\n    return {\"search_app_helpers\": current_app.config[\"SEARCH_UI_SEARCH_CONFIG_GEN\"]}",
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "blueprint",
+        "kind": 5,
+        "importPath": "invenio_search_ui.views",
+        "description": "invenio_search_ui.views",
+        "peekOfCode": "blueprint = Blueprint(\n    \"invenio_search_ui\",\n    __name__,\n    template_folder=\"templates\",\n    static_folder=\"static\",\n)\n@blueprint.route(\"/search\")\ndef search():\n    \"\"\"Search page ui.\"\"\"\n    return render_template(current_app.config[\"SEARCH_UI_SEARCH_TEMPLATE\"])",
+        "detail": "invenio_search_ui.views",
+        "documentation": {}
+    },
+    {
+        "label": "search_ui",
+        "kind": 5,
+        "importPath": "invenio_search_ui.webpack",
+        "description": "invenio_search_ui.webpack",
+        "peekOfCode": "search_ui = WebpackThemeBundle(\n    __name__,\n    \"assets\",\n    default=\"semantic-ui\",\n    themes={\n        \"semantic-ui\": dict(\n            entry={\n                \"invenio_search_ui_app\": \"./js/invenio_search_ui/app.js\",\n            },\n            dependencies={",
+        "detail": "invenio_search_ui.webpack",
+        "documentation": {}
+    },
+    {
+        "label": "instance_path",
+        "kind": 2,
+        "importPath": "tests.conftest",
+        "description": "tests.conftest",
+        "peekOfCode": "def instance_path():\n    \"\"\"Temporary instance path.\"\"\"\n    path = tempfile.mkdtemp()\n    yield path\n    shutil.rmtree(path)\n@pytest.fixture()\ndef app():\n    \"\"\"Flask application fixture.\"\"\"\n    app = Flask(\"testapp\")\n    app.config.update(",
+        "detail": "tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 2,
+        "importPath": "tests.conftest",
+        "description": "tests.conftest",
+        "peekOfCode": "def app():\n    \"\"\"Flask application fixture.\"\"\"\n    app = Flask(\"testapp\")\n    app.config.update(\n        TESTING=True,\n        SEARCH_UI_SEARCH_API=\"api\",\n        BASE_TEMPLATE=\"invenio_search_ui/base.html\",\n        HEADER_TEMPLATE=\"invenio_search_ui/base_header.html\",\n    )\n    Babel(app)",
+        "detail": "tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "use_records_rest_config",
+        "kind": 2,
+        "importPath": "tests.conftest",
+        "description": "tests.conftest",
+        "peekOfCode": "def use_records_rest_config(app):\n    \"\"\"Add temporarily a records rest configuration.\"\"\"\n    app.config.update(_RECORDS_REST_CONFIG)\n    yield\n    for k in _RECORDS_REST_CONFIG:\n        del app.config[k]\n_RECORDS_REST_CONFIG = dict(\n    RECORDS_REST_ENDPOINTS=dict(\n        recid=dict(\n            list_route=\"/myrecords/\",",
+        "detail": "tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "_RECORDS_REST_CONFIG",
+        "kind": 5,
+        "importPath": "tests.conftest",
+        "description": "tests.conftest",
+        "peekOfCode": "_RECORDS_REST_CONFIG = dict(\n    RECORDS_REST_ENDPOINTS=dict(\n        recid=dict(\n            list_route=\"/myrecords/\",\n            default_media_type=\"application/json\",\n            search_index=\"myrecords\",\n        )\n    ),\n    RECORDS_REST_SORT_OPTIONS=dict(\n        myrecords=dict(",
+        "detail": "tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "test_version",
+        "kind": 2,
+        "importPath": "tests.test_app",
+        "description": "tests.test_app",
+        "peekOfCode": "def test_version():\n    \"\"\"Test version import.\"\"\"\n    from invenio_search_ui import __version__\n    assert __version__\ndef test_init():\n    \"\"\"Test extension initialization.\"\"\"\n    app = Flask(\"testapp\")\n    InvenioSearchUI(app)\n    assert \"invenio-search-ui\" in app.extensions\n    app = Flask(\"testapp\")",
+        "detail": "tests.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "test_init",
+        "kind": 2,
+        "importPath": "tests.test_app",
+        "description": "tests.test_app",
+        "peekOfCode": "def test_init():\n    \"\"\"Test extension initialization.\"\"\"\n    app = Flask(\"testapp\")\n    InvenioSearchUI(app)\n    assert \"invenio-search-ui\" in app.extensions\n    app = Flask(\"testapp\")\n    ext = InvenioSearchUI()\n    assert \"invenio-search-ui\" not in app.extensions\n    ext.init_app(app)\n    assert \"invenio-search-ui\" in app.extensions",
+        "detail": "tests.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "test_view",
+        "kind": 2,
+        "importPath": "tests.test_ng_templates",
+        "description": "tests.test_ng_templates",
+        "peekOfCode": "def test_view(app):\n    \"\"\"Test view.\"\"\"\n    with app.test_request_context():\n        _check_template()\ndef test_format_sortoptions(app):\n    \"\"\"Test default sort option filter.\"\"\"\n    sort_options = dict(\n        test1=dict(order=2, title=\"Test1\", default_order=\"desc\"),\n        test2=dict(order=1, title=\"Test2\", default_order=\"asc\"),\n    )",
+        "detail": "tests.test_ng_templates",
+        "documentation": {}
+    },
+    {
+        "label": "test_format_sortoptions",
+        "kind": 2,
+        "importPath": "tests.test_ng_templates",
+        "description": "tests.test_ng_templates",
+        "peekOfCode": "def test_format_sortoptions(app):\n    \"\"\"Test default sort option filter.\"\"\"\n    sort_options = dict(\n        test1=dict(order=2, title=\"Test1\", default_order=\"desc\"),\n        test2=dict(order=1, title=\"Test2\", default_order=\"asc\"),\n    )\n    assert json.loads(format_sortoptions(sort_options)) == dict(\n        options=[\n            dict(title=\"Test2\", value=\"test2\"),\n            dict(title=\"Test1\", value=\"-test1\"),",
+        "detail": "tests.test_ng_templates",
+        "documentation": {}
+    },
+    {
+        "label": "test_view",
+        "kind": 2,
+        "importPath": "tests.test_rsk_templates",
+        "description": "tests.test_rsk_templates",
+        "peekOfCode": "def test_view(app, use_records_rest_config):\n    \"\"\"Test view.\"\"\"\n    with app.test_request_context():\n        _check_template()\ndef test_format_sortoptions(app, use_records_rest_config):\n    \"\"\"Test default sort option filter.\"\"\"\n    with app.test_request_context():\n        assert SearchAppInvenioRestConfigHelper.generate(\n            {\"endpoint_id\": \"recid\"}\n        ) == dict(",
+        "detail": "tests.test_rsk_templates",
+        "documentation": {}
+    },
+    {
+        "label": "test_format_sortoptions",
+        "kind": 2,
+        "importPath": "tests.test_rsk_templates",
+        "description": "tests.test_rsk_templates",
+        "peekOfCode": "def test_format_sortoptions(app, use_records_rest_config):\n    \"\"\"Test default sort option filter.\"\"\"\n    with app.test_request_context():\n        assert SearchAppInvenioRestConfigHelper.generate(\n            {\"endpoint_id\": \"recid\"}\n        ) == dict(\n            appId=\"search\",\n            searchApi={\n                \"axios\": {\n                    \"headers\": {\"Accept\": \"application/json\"},",
+        "detail": "tests.test_rsk_templates",
+        "documentation": {}
+    }
+]
