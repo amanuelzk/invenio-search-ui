@@ -5,6 +5,9 @@ import {
   List,
   Button,
   Search,
+  Accordion,
+  Checkbox,
+  Label,
 } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import { BucketAggregation, Toggle, buildUID } from "react-searchkit";
@@ -33,7 +36,7 @@ function exampleReducer(state, action) {
   }
 }
 
-function SearchDropdown({ result, onResultSelect }) {
+function SearchDropdown({ result, onResultSelect}) {
   const [state, dispatch] = React.useReducer(exampleReducer, initialState);
   const { loading, source, value } = state;
 
@@ -42,22 +45,40 @@ function SearchDropdown({ result, onResultSelect }) {
   const handleSearchChange = React.useCallback(
     (e, data) => {
       clearTimeout(timeoutRef.current);
-      dispatch({ type: "START_SEARCH", query: data.value });
-  
+      let inputValue;
+
+      if (e.target.textContent) {
+        inputValue = e.target.textContent.trim();
+        console.log("Input value: " + inputValue);
+      } else {
+        inputValue = data.value.trim();
+        console.log("Input value: " + inputValue);
+      }
+
+      dispatch({ type: "START_SEARCH", query: inputValue });
+
       timeoutRef.current = setTimeout(() => {
-  
-        const re = new RegExp(_.escapeRegExp(data.value), "i");
-        const isMatch = (result) => re.test(result.text);
-  
-        console.log("Filtered Data:", _.filter(result, isMatch));
-        console.log("source:", _.filter(result, isMatch));
-        const filteredResults = _.filter(result, isMatch);
-  
-        dispatch({
-          type: "FINISH_SEARCH",
-          source: filteredResults,
-        });
-      }, 300);
+        if (inputValue !== "") {
+          const re = new RegExp(_.escapeRegExp(inputValue), "i");
+          const isMatch = (result) => re.test(result.text);
+
+          console.log("Filtered Data:", _.filter(result, isMatch));
+          console.log("source:", _.filter(result, isMatch));
+          const filteredResults = _.filter(result, isMatch);
+
+          dispatch({
+            type: "FINISH_SEARCH",
+            source: filteredResults,
+          });
+        } else {
+          const currentURL = window.location.href;
+
+          const urlObject = new URL(currentURL);
+          const baseURL = `${urlObject.protocol}//${urlObject.host}${urlObject.pathname}`;
+
+          window.location = `${baseURL}?q=&l=list&p=1&s=10&sort=updated-desc`;
+          }
+      }, 10);
     },
     [result]
   );
@@ -69,16 +90,19 @@ function SearchDropdown({ result, onResultSelect }) {
 
   const formattedResults = source.map((item) => ({
     title: item.text,
+    value: item.text,
   }));
 
   return ( 
-    <Search
-      loading={loading}
-      placeholder="Search..."
-      onResultSelect={onResultSelect}
-      onSearchChange={handleSearchChange}
-      results={formattedResults}
-      value={value}
+      <Search
+        fluid
+        loading={loading}
+        placeholder="Search..."
+        onResultSelect={onResultSelect}
+        onSearchChange={handleSearchChange}
+        results={formattedResults}
+        value={value}
+        selectFirstResult
     />
   );
 }
@@ -149,15 +173,60 @@ export const ContribParentFacetValue = ({
   bucket,
   keyField,
   childAggCmps,
+  isSelected,
   onFilterClicked,
   source,
+  showSearchDropdown,
 }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <SearchDropdown 
-      result={source}
-      onResultSelect={(e, { result }) => onFilterClicked(result.keyField)}
-    />
+    <>
+     {showSearchDropdown ? (
+      <SearchDropdown
+        result={source}
+        onResultSelect={(e) => onFilterClicked(e.target.textContent.toLowerCase())}
+      />
+    ) : (
+      <Accordion>
+      <Accordion.Title
+        onClick={() => { }}
+        key={`panel-${bucket.label}`}
+        active={isActive}
+        className="facet-wrapper parent"
+      >
+        <List.Content className="facet-wrapper">
+          <Button
+            icon="angle right"
+            className="transparent"
+            onClick={() => setIsActive(!isActive)}
+            aria-expanded={isActive}
+            aria-label={
+              i18next.t("Show all sub facets of ") + bucket.label || keyField
+            }
+          />
+          <Checkbox
+            label={<label aria-hidden="true">{bucket.label || keyField}</label>}
+            aria-label={bucket.label || keyField}
+            value={keyField}
+            checked={isSelected}
+            onClick={() => onFilterClicked(keyField)}
+          />
+          <Label
+            circular
+            role="note"
+            aria-label={`${bucket.doc_count} results for ${bucket.label || keyField}`}
+            className="facet-count"
+          >
+            <span aria-hidden="true">
+              {bucket.doc_count.toLocaleString("en-US")}
+            </span>
+          </Label>
+        </List.Content>
+      </Accordion.Title>
+      <Accordion.Content active={isActive}>{childAggCmps}</Accordion.Content>
+    </Accordion>
+    )}
+    </>
   );
 };
 
@@ -173,13 +242,39 @@ export const ContribFacetValue = ({
   bucket,
   keyField,
   source,
+  isSelected,
   onFilterClicked,
+  showSearchDropdown,
 }) => {
   return (
-    <SearchDropdown 
-      result={source}
-      onResultSelect={(e, { result }) => onFilterClicked(result.keyField)}
-    />
+    <>
+     {showSearchDropdown ? (
+      <SearchDropdown
+        result={source}
+        onResultSelect={(e) => onFilterClicked(e.target.textContent.toLowerCase())}
+      />
+    ) : (
+      <List.Content className="facet-wrapper">
+      <Checkbox
+        onClick={() => onFilterClicked(keyField)}
+        label={<label aria-hidden="true">{bucket.label || keyField}</label>}
+        aria-label={bucket.label || keyField}
+        value={keyField}
+        checked={isSelected}
+      />
+      <Label
+        circular
+        role="note"
+        aria-label={`${bucket.doc_count} results for ${bucket.label || keyField}`}
+        className="facet-count"
+      >
+        <span aria-hidden="true">
+          {bucket.doc_count.toLocaleString("en-US")}
+        </span>
+      </Label>
+    </List.Content>
+    )}
+    </> 
   );
 };
 
@@ -207,6 +302,7 @@ export const ContribBucketAggregationValuesElement = ({
           isSelected={isSelected}
           childAggCmps={childAggCmps}
           onFilterClicked={onFilterClicked}
+          showSearchDropdown={bucket.label.toLowerCase() === "file type"}
         />
       ) : (
         <ContribFacetValue
@@ -214,6 +310,7 @@ export const ContribBucketAggregationValuesElement = ({
           keyField={keyField}
           isSelected={isSelected}
           onFilterClicked={onFilterClicked}
+          showSearchDropdown={bucket.label.toLowerCase() === "file type"}
         />
       )}
     </List.Item>
@@ -237,12 +334,16 @@ export const ContribBucketAggregationElement = ({
   containerCmp,
   updateQueryFilters,
 }) => {
-  const [dispatch] = React.useReducer(exampleReducer, initialState);
   const clearFacets = () => {
+    const currentURL = window.location.href;
+
+    const urlObject = new URL(currentURL);
+    const baseURL = `${urlObject.protocol}//${urlObject.host}${urlObject.pathname}`;
+
+    window.location = `${baseURL}?q=&l=list&p=1&s=10&sort=updated-desc`;
+
     if (containerCmp.props.selectedFilters.length) {
       updateQueryFilters([agg.aggName, ""], containerCmp.props.selectedFilters);
-      dispatch({ type: "CLEAN_QUERY" });
-      return;
     }
   };
 
@@ -256,6 +357,7 @@ export const ContribBucketAggregationElement = ({
   value: filter.key,
 }));
 
+ const showSearchDropdown = title.toLowerCase() === "file type"
 
   return (
     <Card className="borderless facet">
@@ -277,10 +379,14 @@ export const ContribBucketAggregationElement = ({
             </Button>
           )}
         </Card.Header>
+      {showSearchDropdown ? (
         <SearchDropdown
           result={source}
-          onResultSelect={(e, { value }) => updateQueryFilters([agg.aggName, value], containerCmp.props.selectedFilters)}
+          onResultSelect={(e) => {
+            updateQueryFilters([agg.aggName, e.target.textContent.toLowerCase()], containerCmp.props.selectedFilters);
+          }}
         />
+      ): containerCmp}
       </Card.Content>
     </Card>
   );
@@ -298,3 +404,4 @@ ContribBucketAggregationElement.defaultProps = {
   containerCmp: null,
   source: null,
 };
+
