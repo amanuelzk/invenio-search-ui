@@ -14,7 +14,7 @@ import _isEmpty from "lodash/isEmpty";
 import PropTypes from "prop-types";
 import {http,withCancel} from "react-invenio-forms"
 import _ from 'lodash'
-import { Stumble } from "./stumble";
+import { StumbleNav } from "./stumble";
 const resultRenderer = ({ text }, queryString) => {
 let searchOption = "..."
   if (!_isEmpty(queryString)) {
@@ -90,7 +90,7 @@ export class MultipleOptionsSearchBar extends Component {
     );
     return (
       <>
-      <Stumble selectedValue={selectedValue}/>
+      <StumbleNav selectedValue={selectedValue}/>
       <Search
         fluid
         aria-label={placeholder}
