@@ -7,16 +7,11 @@ export const StumbleNav = () => {
   window.sendToReactComponent = (selectedValue) => {
     const pathname = new URL(window.location.href).pathname;
     const parts = pathname.split("/");
-    if (
-      window.location.href ===
-      `https://gresis.osc.int/records/${parts[parts.length - 1]}`
-    ) {
-      console.log("Selected value in React:", selectedValue);
-      translateLanguage(selectedValue);
-    } else {
+    
       handleOptionChange(selectedValue);
-    }
+   
   };
+
   const [selectedOption, setSelectedOption] = useState(null);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -26,38 +21,39 @@ export const StumbleNav = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (data.length > 0) {
+      const shuffle = _.shuffle(data.map((obj) => obj.id));
+      window.location = `/records/${shuffle[0]}`;
+    }
+  }, [data]);
+
   const processResponse = (response) => {
     if (response && response.hits) {
       const hitsArray = response.hits.hits;
       setData(hitsArray);
-      for (const hit of hitsArray) {
-        const id = hit.id;
-        const title = hit.metadata.title;
-        console.log(`ID: ${id}, Title: ${title}`);
-      }
+      
     } else {
       console.error("No 'hits' property found in the response");
     }
   };
-  const translateLanguage = async (selectedValue) => {
-    console.log(selectedValue);
-    const data = {
-      // send the data
-      value: selectedValue,
-    };
 
-    await http
-      .post("https://gresis.osc.int/api/records/translate", data, {
-        h: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      })
-      .then((resp) => {
-        console.log(resp);
-      });
+  
+
+  const handleOptionChange = async (value) => {
+    setSelectedOption(value);
+
+    let apiUrl = "https://127.0.0.1:5000/api/records?q=&sort=newest&page=1&size=10";
+
+    if (value === "publication") {
+      apiUrl += "&resource_type=publication";
+    } else if (value === "Audio/Video") {
+      apiUrl += "&resource_type=video";
+    }
+
+    await fetchData(apiUrl);
   };
+
   const fetchData = async (url) => {
     setIsLoading(true);
     try {
@@ -74,30 +70,6 @@ export const StumbleNav = () => {
       console.error(error);
       setError(error.response?.data?.message || "An error occurred");
       setIsLoading(false);
-    }
-  };
-
-  const handleOptionChange = async (value) => {
-    setSelectedOption(value);
-
-    if (value === "publication") {
-      await fetchData(
-        "https://gresis.osc.int/api/records?q=&sort=newest&page=1&size=10&resource_type=publication"
-      );
-      const shuffle = _.shuffle(data.map((obj) => obj.id));
-      window.location = `/records/${shuffle[0]}`;
-    } else if (value === "Audio/Video") {
-      await fetchData(
-        "https://gresis.osc.int/api/records?q=&sort=newest&page=1&size=10&resource_type=video"
-      );
-      const shuffle = _.shuffle(data.map((obj) => obj.id));
-      window.location = `/records/${shuffle[0]}`;
-    } else {
-      await fetchData(
-        "https://gresis.osc.int/api/records?q=&sort=newest&page=1&size=10"
-      );
-      const shuffle = _.shuffle(data.map((obj) => obj.id));
-      window.location = `/records/${shuffle[0]}`;
     }
   };
 
